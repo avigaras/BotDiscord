@@ -4,7 +4,10 @@ from discord.ext import commands
 import requests
 import os
 
-API_TOKEN = os.getenv("API_TOKENT")
+import webserver
+
+
+API_TOKEN = os.getenv("API_TOKEN")
 
 intents = discord.Intents.all()
 
@@ -20,4 +23,5 @@ async def hola(ctx, *args):
 async def on_ready():
     print(f"{bot.user} RDY")
 
+webserver.keep_alive()
 bot.run(API_TOKEN)
