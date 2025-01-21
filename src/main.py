@@ -2,7 +2,9 @@ import discord
 from discord.ext import commands
 
 import requests
-import bot_secrets
+import os
+
+API_TOKEN = os.getenv("API_TOKENT")
 
 intents = discord.Intents.all()
 
@@ -18,4 +20,4 @@ async def hola(ctx, *args):
 async def on_ready():
     print(f"{bot.user} RDY")
 
-bot.run(bot_secrets.API_TOKEN)
+bot.run(API_TOKEN)
